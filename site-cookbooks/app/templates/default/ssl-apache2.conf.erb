@@ -1,0 +1,52 @@
+###TODO REVISE! Don't use!
+
+<VirtualHost 108.166.81.85:80>
+ServerName www.webneers.net
+ServerAlias webneers.net
+     Redirect permanent / https://www.webneers.net/
+</VirtualHost>
+<VirtualHost 108.166.81.85:443>
+ ServerAdmin jeichel@clemson.edu
+ SSLEngine on 
+ SSLCertificateFile /etc/apache2/ssl/www_webneers_net.crt
+ SSLCertificateKeyFile /etc/apache2/ssl/server.key
+ SSLCertificateChainFile /etc/apache2/ssl/DigiCertCA.crt     
+#SSLCACertificateFile /etc/apache2/ssl/DigiCertCA.crt 
+DocumentRoot /srv/www/prod_webneers/app/current/httpdocs/
+     ErrorLog /srv/www/prod_webneers/logs/error.log
+     CustomLog /srv/www/prod_webneers/logs/access.log combined
+     SetEnvIf Request_URI "\.(jpg|xml|png|gif|ico|js|css|swf|js?.|css?.)$" DontLog
+     CustomLog /srv/www/prod_webneers/logs/requests.log mycombined Env=!DontLog
+<Directory /srv/www/prod_webneers/app/current/httpdocs>
+DirectoryIndex index.php
+AllowOverride None
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+php_admin_value safe_mode off
+SetEnv ENVIRONMENT production
+     SetEnv LOG_ERRORS 1
+     SetEnv REG_KEY_EXPIRE_TIME 14
+     SetEnv SESSION_KEY_EXPIRE_TIME 1
+     SetEnv EMAIL_FROM no-reply@efnep.com
+     SetEnv PRINT_APP_INFO_ON_LOAD 0
+     SetEnv SERVER 127.0.0.1
+     SetEnv USER efnep_admin
+     SetEnv PASS wuth1gu4wu
+     SetEnv DATABASE prod_federal
+     SetEnv PORT 3306
+     SetEnv SALT ni6rho0phac2mer
+     SetEnv GOOGLE_API_KEY ABQIAAAAjpWPCmHvrLkv0rZH8lzdXhTTnSoLLjYX2MFP3YBgLOt6-yIj-BSIbZwP8maQlpP5WCcHqblyGl$
+     SetEnv POSTMARK_APP_API_KEY 82060f44-619c-4e20-b42e-b9b2c3ca3074
+     SetEnv READ_ONLY 0
+     SetEnv APP_VERSION dev
+     SetEnv MELISSA_DATA_API_KEY 99734894
+     SetEnv SESSION_MAX_LIFESPAN 1740
+     SetEnv DB_PREFIX prod
+</Directory>
+
+</VirtualHost>
