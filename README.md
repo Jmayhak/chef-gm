@@ -1,2 +1,3 @@
+Chef-gm is a boilerplate coupled with a set of tutorials, use cases and opinions for using Chef from development to production.  Most work is being put into a LAMP stack for local development and production.  Updates on Chef-gm will be happening rapidly as I learn Chef and reorder things.  Read the docs, fork, and start customizing your infrastructure knowing that things will change.
 
 Visit the [Chef-gm documentation](http://jsnrkd.github.io/chef-gm) for information.
