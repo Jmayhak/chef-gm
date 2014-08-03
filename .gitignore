@@ -1,16 +1,10 @@
-.vagrant
-Berksfile.lock
-*~
-*#
-.#*
-\#*#
-.*.sw[a-z]
-*.un~
-/cookbooks
+/bower_components/
+/node_modules/
+/_site/
 
-# Bundler
-Gemfile.lock
-bin/*
-.bundle/*
-/cookbooks/
-.kitchen/*
+/static/css/screen.css
+/static/css/print.css
+/static/css/ie*.css
+/static/js/site.js
+
+.DS_Store

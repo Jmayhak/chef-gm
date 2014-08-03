@@ -1,7 +1,4 @@
-source 'https://rubygems.org'
-
-gem "berkshelf", github: "berkshelf/berkshelf"
-gem 'vagrant-berkshelf', github: "berkshelf/vagrant-berkshelf"
-gem 'vagrant-omnibus', github: "schisamo/vagrant-omnibus"
-#gem 'test-kitchen'
-#gem 'kitchen-vagrant'
+source "https://rubygems.org"
+ruby "1.9.3"
+gem "jekyll"
+gem "jekyll-last-modified-at"

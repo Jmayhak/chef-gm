@@ -1,0 +1,52 @@
+# Table of Contents
+# -----------------
+
+toc:
+  - head: /index.html
+    body: []
+
+  - head: /getting_started/index.html
+    body: [] 
+     # - /getting_started/chef_solo.html
+
+  - head: /servers/index.html
+    body:
+     # - /servers/converting_to_chef.html
+     - /servers/environments.html
+     - /servers/provision_rackspace.html
+
+  # - head: /debugging/index.html
+  #   body:
+  #    - /debugging/xdebug.html
+
+  # - head: /qa/index.html
+  #   body:
+  #    - /qa/bug_tracking.html
+
+  # - head: /projects/index.html
+  #   body:
+  #    []
+
+# Jekyll Configuration
+# --------------------
+
+baseurl    : '/chef-gm'
+#baseurl     : ''
+source      : src/pages
+posts       : ../posts
+layouts     : ../layouts
+includes    : ../includes
+
+destination : dist
+plugins     : jekyll_plugins
+
+keep_files  : [ 'css', 'js', 'images' ]
+
+permalink   : /:categories/:year/:month/:day/:title
+
+safe        : false
+pygments    : true
+markdown    : kramdown
+
+gems:
+  - jekyll-last-modified-at
